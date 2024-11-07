@@ -1,7 +1,15 @@
 {
-  "name": "com.github.postive.simple-dialog-asset-manager",
-  "description": "SDAM provides a simple way to manage your dialog assets in Unity.",
+  "name": "com.github.postive.simple-dialog-manager",
+  "description": "SDM provides a simple way to manage your dialog assets in Unity.",
   "version": "0.3.1",
-  "unity": "2019.3",
-  "displayName": "Simple Dialog Asset Manager"
+  "displayName": "Simple Dialog Manager",
+  "unity": "2019.4",
+  "author": {
+    "name": "Positive",
+    "email": "postive12@gmail.com",
+    "url": "https://postiveground.com"
+  },
+  "dependencies": {
+    "com.positive.categorized-db": "https://github.com/Postive-ToolKit/CategorizedDB.git"
+  }
 }
