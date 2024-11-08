@@ -2,9 +2,9 @@
 
 namespace DialogSystem.Runtime.Attributes
 {
-    public class SDAMReadOnlyAttribute : PropertyAttribute {
+    public class SDMReadOnlyAttribute : PropertyAttribute {
         public readonly bool runtimeOnly;
-        public SDAMReadOnlyAttribute(bool runtimeOnly = false)
+        public SDMReadOnlyAttribute(bool runtimeOnly = false)
         {
             this.runtimeOnly = runtimeOnly;
         }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DialogSystem.Runtime.Attributes;
 using DialogSystem.Runtime.Structure.ScriptableObjects;
 using Postive.SimpleDialogAssetManager.Runtime.Interfaces;
 using UnityEngine;
@@ -15,7 +16,7 @@ namespace DialogSystem.Dialogs.Components.Managers
                 if (_instance != null) {
                     return _instance;
                 }
-                _instance = FindObjectOfType<DialogManager>();
+                _instance = FindFirstObjectByType<DialogManager>();
                 if (_instance != null) {
                     return _instance;
                 }
@@ -33,12 +34,13 @@ namespace DialogSystem.Dialogs.Components.Managers
         public bool IsPlaying => _currentDialog != null;
         public IDialogHandler[] DialogHandlers => _dialogHandlers.ToArray();
         public DialogGraph CurrentDialog => _currentDialog;
-        [SerializeField] private DialogGraph _currentDialog = null;
-
+        [DialogSelector][SerializeField] private string _startUpDialog = string.Empty;
+        [SDMReadOnly][SerializeField] private DialogGraph _currentDialog = null;
         private readonly List<IDialogHandler> _dialogHandlers = new List<IDialogHandler>();
         private void Start() {
-            _currentDialog.PlayPlot();
-            Play();
+            if (!string.IsNullOrEmpty(_startUpDialog)) {
+                SelectDialogPlot(_startUpDialog);
+            }
         }
 
         /// <summary>

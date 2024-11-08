@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace DialogSystem.Editor.Attributes
 {
-    [CustomPropertyDrawer(typeof(SDAMReadOnlyAttribute))]
-    public class SDAMReadOnlyDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(SDMReadOnlyAttribute))]
+    public class SDMReadOnlyDrawer : PropertyDrawer
     {
         // Necessary since some properties tend to collapse smaller than their content
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
@@ -15,7 +15,7 @@ namespace DialogSystem.Editor.Attributes
         // Draw a disabled property field
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            GUI.enabled = !Application.isPlaying && ((SDAMReadOnlyAttribute)attribute).runtimeOnly;
+            GUI.enabled = !Application.isPlaying && ((SDMReadOnlyAttribute)attribute).runtimeOnly;
             EditorGUI.PropertyField(position, property, label, true);
             GUI.enabled = true;
         }

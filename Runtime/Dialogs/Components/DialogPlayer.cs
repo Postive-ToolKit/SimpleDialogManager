@@ -5,9 +5,6 @@ using UnityEngine.Serialization;
 #if HAS_NEW_INPUT
     using UnityEngine.InputSystem;
 #endif
-
-
-
 namespace DialogSystem.Dialogs.Components
 {
     public class DialogPlayer : MonoBehaviour
