@@ -1,10 +1,10 @@
-﻿using System;
+﻿#if !ODIN_INSPECTOR
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Postive.SimpleDialogAssetManager.Runtime.Dialogs.Events;
 using UnityEditor;
 using UnityEngine;
-
 namespace Postive.SimpleDialogAssetManager.Editor.CustomEditors.PropertyDrawers
 {
     [CustomPropertyDrawer(typeof(DialogEventHolder))]
@@ -121,3 +121,4 @@ namespace Postive.SimpleDialogAssetManager.Editor.CustomEditors.PropertyDrawers
          */
     }
 }
+#endif

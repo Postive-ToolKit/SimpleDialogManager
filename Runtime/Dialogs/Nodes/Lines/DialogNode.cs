@@ -13,7 +13,7 @@ namespace DialogSystem.Nodes.Lines
         public override string Content {
             get => _dialogEvents.Content;
         }
-        [SerializeField] private DialogEventHolder _dialogEvents = new(new List<DialogEvent>{new DialogLineEvent()});
+        [SerializeField] private DialogEventHolder _dialogEvents = new(new List<IDialogEvent>{new DialogLineEvent()});
         protected override void OnPlay(DialogManager manager) {
             _dialogEvents.Invoke(manager);
         }

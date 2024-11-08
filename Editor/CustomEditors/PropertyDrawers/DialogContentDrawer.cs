@@ -1,7 +1,7 @@
-﻿using DialogSystem.Runtime.Structure.ScriptableObjects;
+﻿#if !ODIN_INSPECTOR
+using DialogSystem.Runtime.Structure.ScriptableObjects;
 using UnityEditor;
 using UnityEngine;
-
 namespace Postive.SimpleDialogAssetManager.Editor.CustomEditors.PropertyDrawers
 {
     [CustomPropertyDrawer(typeof(DialogContent))]
@@ -19,3 +19,4 @@ namespace Postive.SimpleDialogAssetManager.Editor.CustomEditors.PropertyDrawers
         }
     }
 }
+#endif
