@@ -1,4 +1,5 @@
 ﻿using DialogSystem.Runtime.Structure.ScriptableObjects;
+using Postive.CategorizedDB.Runtime.Categories.Interfaces;
 using Runtime.Attributes;
 using UnityEngine;
 
@@ -6,8 +7,6 @@ namespace DialogSystem.Runtime.Attributes
 {
     public class DialogSelectorAttribute : CategoryElementSelectorAttribute
     {
-        public DialogSelectorAttribute() : base() {
-            ElementFinder = DialogDB.Instance;
-        }
+        public override ICategoryElementFinder ElementFinder => DialogDB.Instance;
     }
 }
