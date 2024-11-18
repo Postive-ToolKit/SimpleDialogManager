@@ -76,7 +76,7 @@ namespace Postive.SimpleDialogAssetManager.Editor.CustomEditors.PlotEditors
             
             secondSplitView.Add(inspectorContainer);
             
-            CategorizeDBEditorTreeView assetTreeView = new CategorizeDBEditorTreeView();
+            CategorizeDBEditorTreeView<Dialog> assetTreeView = new CategorizeDBEditorTreeView<Dialog>();
             VisualElement treeViewContainer = new VisualElement();
             treeViewContainer.Add(
                 new Label("Dialog List") {
